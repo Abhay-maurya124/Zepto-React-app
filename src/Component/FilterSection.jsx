@@ -40,7 +40,7 @@ const FilterSection = ({
               className="flex items-center gap-4 p-1 hover:bg-gray-50 rounded"
             >
               <input
-                type="radio"
+                type="checkbox"
                 name="category"
                 className="h-4 w-4 text-blue-600"
                 value={item}
@@ -75,7 +75,9 @@ const FilterSection = ({
 
       {/* Price Range */}
       <div>
-        <h1 className="text-lg font-semibold text-gray-800 mb-2">Price Range</h1>
+        <h1 className="text-lg font-semibold text-gray-800 mb-2">
+          Price Range
+        </h1>
         <div className="flex flex-col gap-2">
           <label className="text-sm">
             ${priceRange[0]} — ${priceRange[1]}
