@@ -37,7 +37,7 @@ const FilterSection = ({
           {categoryOnlyData?.map((item, idx) => (
             <label
               key={idx}
-              className="flex items-center gap-2 p-1 hover:bg-gray-50 rounded"
+              className="flex items-center gap-4 p-1 hover:bg-gray-50 rounded"
             >
               <input
                 type="radio"
