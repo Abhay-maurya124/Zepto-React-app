@@ -8,20 +8,19 @@ export const DataProvider = ({ children }) => {
 
   const fetchAllProduct = async () => {
     try {
-      const res = await axios.get(
-        "https://fakestoreapi.in/api/products?limit=150"
-      );
-      setData(res.data.products || []);
+      const res = await axios.get("https://fakestoreapi.com/products?limit=149");
+      setData(res.data || []);
     } catch (error) {
       console.error("Error fetching products:", error);
-      setData([]); // Set empty array on error
+      setData([]);
     }
   };
+
   const getUniqueCategory = (data, property) => {
     var newVal = data?.map((curElem) => {
       return curElem[property];
     });
-    newVal = ["All",...new Set(newVal)];
+    newVal = ["All", ...new Set(newVal)];
     return newVal;
   };
   const categoryOnlyData = getUniqueCategory(data, "category");
@@ -33,7 +32,7 @@ export const DataProvider = ({ children }) => {
 
   return (
     <dataContext.Provider
-      value={{ data, fetchAllProduct, categoryOnlyData, setData, brandOnlyData}}
+      value={{ data, fetchAllProduct, categoryOnlyData, setData, brandOnlyData }}
     >
       {children}
     </dataContext.Provider>
